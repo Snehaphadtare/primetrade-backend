@@ -1,67 +1,63 @@
-# PrimeTrade Backend Developer Internship Assignment
+# PrimeTrade Backend Project
 
-## 📌 Project Overview
-This project is a full-stack demonstration built for the **PrimeTrade Backend Developer Internship Assignment**.
-
-It includes a **secure, scalable REST API** with JWT authentication and role-based access, along with a **basic React frontend UI** to demonstrate API usage.
+## Overview
+This project is a backend-focused implementation with a simple frontend UI built to demonstrate secure API design, authentication, and CRUD functionality. The application follows REST principles and is structured to support scalability and future expansion.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🔐 Authentication & Authorization
-- User Registration & Login
+### Authentication & Authorization
+- User registration and login
 - Password hashing using bcrypt
 - JWT-based authentication
-- Role-based access control (User / Admin)
+- Role-based access control (user and admin)
 
-### 📦 Task Management (CRUD)
-- Create tasks (Authenticated users)
+### Task Management
+- Create tasks (authenticated users)
 - View tasks
-  - Users see only their own tasks
-  - Admins can see all tasks
-- Update tasks (Owner/Admin only)
-- Delete tasks (Owner/Admin only)
+  - Users can access only their own tasks
+  - Admin users can access all tasks
+- Update tasks (owner or admin)
+- Delete tasks (owner or admin)
 
-### 🛠 Backend Capabilities
-- RESTful API design with proper status codes
-- API versioning (`/api/v1`)
-- Input validation & error handling
-- MongoDB database with Mongoose ODM
-- Scalable project structure
+### Backend Architecture
+- RESTful APIs with proper HTTP status codes
+- API versioning using `/api/v1`
+- Centralized error handling
+- MongoDB database with Mongoose
+- Modular and scalable folder structure
 
-### 🎨 Frontend (React)
-- Register & Login UI
+### Frontend
+- Basic React UI for API interaction
+- User registration and login
 - JWT-protected dashboard
-- Create & delete tasks
-- Displays real-time API responses
-- Clean, minimal UI for demonstration
+- Create and delete tasks
+- Displays API responses clearly
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 **Backend**
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
-- JWT
+- JSON Web Token (JWT)
 - bcrypt
 - Nodemon
 
 **Frontend**
-- React.js (Single-page demo UI)
+- React.js
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 primetrade-backend/
-│
 ├── src/
 │ ├── config/
-│ │ └── db.js
 │ ├── controllers/
 │ ├── middlewares/
 │ ├── models/
@@ -69,16 +65,14 @@ primetrade-backend/
 │ ├── app.js
 │ └── server.js
 │
-├── frontend/ (React demo UI)
-│
-├── .env
+├── frontend/
 ├── package.json
 ├── README.md
 
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Setup
 
 Create a `.env` file in the root directory:
 
@@ -89,23 +83,40 @@ JWT_SECRET=primetrade_secret_key
 
 ---
 
-## ▶️ How to Run Locally
+## Running the Project
 
-### 1️⃣ Clone Repository
+### Backend
 ```bash
-git clone <your-github-repo-url>
-cd primetrade-backend
-2️⃣ Install Backend Dependencies
 npm install
-3️⃣ Start Backend Server
 npm run dev
-Server runs on:
+The backend server runs on:
 
 http://localhost:5000
-4️⃣ Run Frontend
+Frontend
 cd frontend
 npm install
 npm start
-Frontend runs on:
+The frontend runs on:
 
 http://localhost:3000
+API Endpoints
+Authentication
+POST /api/v1/auth/register
+
+POST /api/v1/auth/login
+
+Tasks (Protected)
+GET /api/v1/tasks
+
+POST /api/v1/tasks
+
+PUT /api/v1/tasks/:id
+
+DELETE /api/v1/tasks/:id
+
+Scalability Considerations
+Stateless authentication using JWT
+
+Modular architecture for easy feature expansion
+
+Can be extended with caching, load balancing, or containerization
