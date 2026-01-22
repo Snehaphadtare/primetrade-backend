@@ -1,8 +1,8 @@
 # PrimeTrade Backend Assignment
 
 ## Project Overview
-This is the backend for PrimeTrade Backend Developer Internship Assignment. 
-It includes a secure, scalable REST API with JWT authentication and role-based access, and CRUD operations for a secondary entity (Tasks).
+This is the backend for the PrimeTrade Backend Developer Internship Assignment.  
+It includes a secure, scalable REST API with JWT authentication, role-based access, and CRUD operations for a secondary entity (Tasks).
 
 ---
 
@@ -31,6 +31,58 @@ It includes a secure, scalable REST API with JWT authentication and role-based a
 
 ## How to Run Locally
 
-1. Install dependencies
-```bash
+1. Install dependencies:
+```
 npm install
+```
+
+2. Make sure MongoDB is running locally (`mongod`)
+
+3. Create a `.env` file in the project root with the following:
+```
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/primetrade
+JWT_SECRET=your_secret
+```
+
+4. Start the server:
+```
+npm run dev
+```
+
+5. Test APIs using Postman (see exported collection)
+
+---
+
+## Project Structure
+
+```
+primetrade-backend/
+ ├── src/
+ │   ├── config/       # Database connection
+ │   ├── controllers/  # Route logic
+ │   ├── middleware/   # Auth, error handling
+ │   ├── models/       # Mongoose schemas
+ │   ├── routes/       # API endpoints
+ │   └── server.js     # Entry point
+ ├── .gitignore
+ ├── package.json
+ ├── package-lock.json
+ └── README.md
+```
+
+---
+
+## Postman Collection
+
+- All endpoints (Register, Login, Tasks CRUD) are included  
+- Use **Bearer Token** for protected routes  
+
+---
+
+## Scalability Notes
+
+- Can be scaled using **microservices architecture**  
+- **Redis caching** can be added for performance  
+- **Load balancers** can handle high traffic  
+- Structured to **easily add new modules**
