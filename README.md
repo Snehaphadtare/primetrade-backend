@@ -1,7 +1,7 @@
-# PrimeTrade Backend Project
+# Task Management Project
 
 ## Overview
-This project is a backend-focused implementation with a simple frontend UI built to demonstrate secure API design, authentication, and CRUD functionality. The application follows REST principles and is structured to support scalability and future expansion.
+This project is a full-stack implementation with a simple frontend UI built to demonstrate secure API design, authentication, and CRUD functionality. The application follows REST principles and is structured to support scalability and future expansion.
 
 ---
 
